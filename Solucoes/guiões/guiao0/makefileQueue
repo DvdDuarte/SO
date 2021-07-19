@@ -1,0 +1,10 @@
+CFLAGS=-g
+prog: main.o queue.o
+	gcc $(CFLAGS) -o prog main.o queue.o
+
+main.o: main.c queue.h
+
+queue.o: queue.c queue.h
+
+clean:
+	rm *.o prog
